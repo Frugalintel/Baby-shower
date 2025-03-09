@@ -117,39 +117,24 @@
             }
         }
 
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .registry-note {
-            font-size: 0.9rem;
-            color: var(--dark-color);
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-
-        .registry-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .registry-link:hover {
-            color: var(--primary-color);
+        /* Static decoration styling */
+        .decoration {
+            position: absolute;
+            color: var(--accent-color);
+            pointer-events: none;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
     <div class="thanks-container">
-        <!-- Artistic arrangement of 5 icons -->
-        <i class="fas fa-heart floating-decoration decoration-xl" style="top: 18%; left: 15%; transform: rotate(-12deg);"></i>
-        <i class="fas fa-star floating-decoration decoration-md" style="top: 30%; right: 20%; transform: rotate(15deg);"></i>
-        <i class="fas fa-baby floating-decoration decoration-lg" style="bottom: 25%; left: 22%; transform: rotate(-8deg);"></i>
-        <i class="fas fa-gift floating-decoration decoration-sm" style="bottom: 30%; right: 18%; transform: rotate(10deg);"></i>
-        <i class="fas fa-moon floating-decoration decoration-xs" style="top: 55%; left: 30%; transform: rotate(20deg);"></i>
+        <!-- Static decorations with inline styles - no animations -->
+        <i class="fas fa-heart decoration" style="top: 18%; left: 15%; font-size: 3.6rem; opacity: 0.15; transform: rotate(-12deg);"></i>
+        <i class="fas fa-star decoration" style="top: 30%; right: 20%; font-size: 2.4rem; opacity: 0.15; transform: rotate(15deg);"></i>
+        <i class="fas fa-baby decoration" style="bottom: 25%; left: 22%; font-size: 3rem; opacity: 0.15; transform: rotate(-8deg);"></i>
+        <i class="fas fa-gift decoration" style="bottom: 30%; right: 18%; font-size: 1.8rem; opacity: 0.15; transform: rotate(10deg);"></i>
+        <i class="fas fa-moon decoration" style="top: 55%; left: 30%; font-size: 1.2rem; opacity: 0.15; transform: rotate(20deg);"></i>
+        
         <div class="border-blur"></div>
         <div class="thanks-box">
             <h1 class="thanks-title">Thank You!</h1>
@@ -159,11 +144,8 @@
                 <i class="fas fa-heart"></i>
                 <i class="fas fa-star"></i>
             </div>
-            <div class="links-container">
+            <div>
                 <a href="index.html" class="home-link">← Return to Baby Shower Page</a>
-                <p class="registry-note">If you're interested, you can view our 
-                    <a href="https://my.babylist.com/caitlin-saxton" target="_blank" class="registry-link">baby registry here</a>
-                </p>
             </div>
         </div>
     </div>
