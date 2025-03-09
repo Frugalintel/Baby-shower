@@ -306,42 +306,76 @@ textarea {
     border: none; /* Removed border as requested */
 }
 
-/* Registry Section */
+/* Updated Registry Section Styles */
 #registry {
     background-color: var(--primary-color);
     padding: 100px 0;
 }
 
+#registry h2 {
+    font-size: 3rem;
+    font-family: var(--font-fancy);
+    color: var(--dark-color);
+    margin-bottom: 25px;
+}
+
+#registry p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
 .registry-links {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
     margin-top: 40px;
 }
 
 .registry-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 25px 40px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 35px 60px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none; /* Removed border as requested */
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .registry-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .registry-card i {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: var(--secondary-color); /* Blue icons */
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
 }
+
+.registry-card span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Add some fun decorative elements */
+.registry-container {
+    position: relative;
+    padding: 20px;
+}
+
+.registry-decoration {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.decoration-1 { top: 20px; left: 10%; }
+.decoration-2 { top: 40px; right: 15%; }
+.decoration-3 { bottom: 30px; left: 20%; }
+.decoration-4 { bottom: 50px; right: 25%; }
 
 /* Gallery Section */
 #gallery {
