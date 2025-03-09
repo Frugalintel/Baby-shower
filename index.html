@@ -77,13 +77,10 @@
         <div class="container">
             <h2>RSVP</h2>
             <p>Please let us know if you can make it by October 1st.</p>
-            <form action="https://formsubmit.co/jaydensaxton.c@outlook.com" method="POST">
-                <input type="hidden" name="_next" value="thanks.html">
-                <input type="hidden" name="_subject" value="New Baby Shower RSVP!">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_autoresponse" value="Thank you for your RSVP! We've received your submission and look forward to seeing you at the baby shower.">
-                
+            
+            <!-- Form with JS fallback handling -->
+            <form id="rsvp-form" onsubmit="handleFormSubmit(event)">
+                <!-- Basic form fields -->
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
@@ -165,4 +162,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
