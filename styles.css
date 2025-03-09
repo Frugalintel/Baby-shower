@@ -852,4 +852,53 @@ footer a:hover {
     .thanks-message {
         font-size: 1.1rem;
     }
+    
+    .action-btn {
+        font-size: 0.9rem;
+        padding: 7px 12px;
+    }
+}
+
+/* Address action buttons */
+.address-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 0.95rem;
+    background-color: var(--white);
+    color: var(--dark-brown);
+    border: 1px solid var(--honey);
+    border-radius: 30px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.copy-btn {
+    background-color: var(--honey-light);
+}
+
+.maps-btn {
+    background-color: var(--pooh-blue-light);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--honey);
+    color: var(--dark-brown);
+}
+
+.action-btn i {
+    margin-right: 8px;
 } 
