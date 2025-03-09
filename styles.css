@@ -90,8 +90,9 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center;
+    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center top;
     background-size: cover;
+    background-position: center 2%;
     z-index: -2;
 }
 
@@ -222,10 +223,7 @@ nav a:hover::after {
 #event-details {
     background-color: var(--soft-blue);
     padding: 100px 0;
-    background-image: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg');
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: 200px;
+    position: relative;
 }
 
 .details-grid {
@@ -263,11 +261,8 @@ nav a:hover::after {
 
 /* RSVP Section */
 #rsvp {
-    background-color: #F4F9FD; /* Very soft blue background */
-    background-image: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg');
-    background-position: bottom left;
-    background-repeat: no-repeat;
-    background-size: 150px;
+    background-color: #F4F9FD;
+    position: relative;
 }
 
 #rsvp form {
@@ -326,12 +321,9 @@ textarea {
 
 /* Registry Section */
 #registry {
-    background-color: var(--primary-color); /* Pooh yellow background */
+    background-color: var(--primary-color);
     padding: 100px 0;
-    background-image: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg');
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: 180px;
+    position: relative;
 }
 
 .registry-links {
@@ -367,11 +359,8 @@ textarea {
 
 /* Gallery Section */
 #gallery {
-    background-color: var(--soft-blue); /* Soft blue */
-    background-image: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg');
-    background-position: bottom left;
-    background-repeat: no-repeat;
-    background-size: 150px;
+    background-color: var(--soft-blue);
+    position: relative;
 }
 
 .gallery-placeholder {
@@ -492,46 +481,6 @@ footer a:hover {
         background-size: 80px; /* Even smaller character images on mobile */
         background-position: bottom center;
     }
-}
-
-/* Section Backgrounds */
-#event-details::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.15;
-    z-index: -1;
-}
-
-#rsvp::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: -1;
-}
-
-#registry::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.15;
-    z-index: -1;
 }
 
 /* Thanks Page Styles */
