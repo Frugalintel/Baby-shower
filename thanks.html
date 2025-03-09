@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Baby Boy Shower</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Background pattern and gradient */
+        .thanks-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(78, 139, 194, 0.05) 25%, transparent 25%, 
+                      transparent 50%, rgba(78, 139, 194, 0.05) 50%, rgba(78, 139, 194, 0.05) 75%, 
+                      transparent 75%, transparent);
+            background-size: 40px 40px;
+        }
+        
+        .thanks-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: center 2%;
+            z-index: -2;
+        }
+        
+        .thanks-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            z-index: -1;
+        }
+        
+        /* Enhanced thanks box */
+        .thanks-box {
+            background: linear-gradient(145deg, rgba(254, 249, 231, 0.95), rgba(254, 249, 231, 0.85));
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(45, 75, 115, 0.2), 
+                        inset 0 0 60px rgba(255, 255, 255, 0.5);
+            max-width: 90%;
+            width: 600px;
+            border-left: 5px solid var(--accent-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Title with elegant underline */
+        .thanks-title {
+            font-family: var(--font-fancy);
+            font-size: 3.2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .thanks-title::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            bottom: 0;
+            left: 10%;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+        }
+        
+        .thanks-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* Enhanced icon container */
+        .icon-container {
+            margin: 20px 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+            padding: 10px 0;
+            border-radius: 30px;
+        }
+        
+        .icon-container i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin: 0 10px;
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
+        }
+        
+        /* Enhanced links */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 3px 10px rgba(45, 75, 115, 0.1);
+        }
+        
+        .home-link:hover {
+            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(45, 75, 115, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .registry-note {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            opacity: 0.8;
+            margin-top: 5px;
+            padding: 5px 15px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+        }
+        
+        .registry-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .registry-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .registry-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .registry-link:hover::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 480px) {
+            .thanks-box {
+                padding: 30px 20px;
+            }
+            
+            .thanks-title {
+                font-size: 2.5rem;
+            }
+            
+            .thanks-message {
+                font-size: 1.1rem;
+            }
+            
+            .icon-container i {
+                font-size: 2.5rem;
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thanks-container">
+        <!-- Background decorations, positioned away from interactive elements -->
+        <i class="fas fa-heart decoration" style="top: 18%; left: 8%; font-size: 3.6rem; transform: rotate(-12deg);"></i>
+        <i class="fas fa-star decoration" style="top: 25%; right: 10%; font-size: 2.4rem; transform: rotate(15deg);"></i>
+        <i class="fas fa-baby decoration" style="bottom: 20%; left: 12%; font-size: 3rem; transform: rotate(-8deg);"></i>
+        <i class="fas fa-gift decoration" style="bottom: 25%; right: 8%; font-size: 1.8rem; transform: rotate(10deg);"></i>
+        <i class="fas fa-moon decoration" style="top: 55%; left: 15%; font-size: 1.2rem; transform: rotate(20deg);"></i>
+        <i class="fas fa-sun decoration" style="top: 70%; right: 20%; font-size: 2.5rem; transform: rotate(-15deg);"></i>
+        <i class="fas fa-cloud decoration" style="bottom: 65%; left: 25%; font-size: 2.2rem; transform: rotate(5deg);"></i>
+        <i class="fas fa-music decoration" style="bottom: 40%; right: 15%; font-size: 1.5rem; transform: rotate(-20deg);"></i>
+        
+        <div class="border-blur"></div>
+        <div class="thanks-box">
+            <h1 class="thanks-title">Thank You!</h1>
+            <p class="thanks-message">We're so excited to have you join us in celebrating our little boy's upcoming arrival!</p>
+            <div class="icon-container">
+                <i class="fas fa-baby"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div>
+                <a href="index.html" class="home-link">← Return to Baby Shower Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
