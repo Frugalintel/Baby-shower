@@ -62,34 +62,51 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Form handling - Now using FormSubmit
-const rsvpForm = document.getElementById('rsvp-form');
-const confirmation = document.getElementById('confirmation');
-
-if (rsvpForm) {
-    // Check if we're on a local environment (file:// protocol) 
-    const isLocalEnvironment = window.location.protocol === 'file:';
+// Form handling function - JavaScript fallback when FormSubmit fails
+function handleFormSubmit(event) {
+    event.preventDefault();
     
-    if (isLocalEnvironment) {
-        // Use local form handling for testing
-        rsvpForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(rsvpForm);
-            const formEntries = Object.fromEntries(formData.entries());
-            
-            // Log form data to console (for testing purposes)
-            console.log('RSVP Form Submission (Local Test):', formEntries);
-            
-            // Show confirmation message
-            rsvpForm.style.display = 'none';
-            confirmation.classList.remove('hidden');
-            
-            // Alert for local testing
-            alert('Local testing: Form would be submitted to FormSubmit in production. Check console for form data.');
-        });
-    }
+    // Get form data
+    const form = document.getElementById('rsvp-form');
+    const name = form.elements['name'].value;
+    const email = form.elements['email'].value;
+    const guests = form.elements['guests'].value;
+    const attending = form.querySelector('input[name="attending"]:checked').value;
+    const message = form.elements['message'].value;
+    
+    // Log form data for debug purposes
+    console.log('RSVP Form Submission:', {
+        name,
+        email,
+        guests,
+        attending,
+        message
+    });
+    
+    // Attempt to send form to FormSubmit as a backup
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('guests', guests);
+    formData.append('attending', attending);
+    formData.append('message', message);
+    
+    // Try to send the form data using fetch
+    fetch('https://formsubmit.co/jaydensaxton.c@outlook.com', {
+        method: 'POST',
+        body: formData
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+    
+    // Show confirmation message
+    form.style.display = 'none';
+    document.getElementById('confirmation').classList.remove('hidden');
+    
+    // Redirect to thanks page
+    setTimeout(() => {
+        window.location.href = 'thanks.html';
+    }, 2000);
 }
 
 // Add active class to nav links on scroll
