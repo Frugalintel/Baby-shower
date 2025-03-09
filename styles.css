@@ -1,0 +1,531 @@
+/* Global Styles */
+:root {
+    --primary-color: #FCB41E;     /* Keep Pooh's yellow */
+    --secondary-color: #4E8BC2;   /* Baby boy blue */
+    --accent-color: #BA5D31;      /* Brown accent */
+    --soft-accent: #F8E3A3;       /* Soft honey color */
+    --dark-color: #2D4B73;        /* Darker boy blue */
+    --soft-blue: #C5E0F5;         /* Soft baby blue */
+    --light-color: #ffffff;
+    --font-primary: 'Poppins', sans-serif;
+    --font-fancy: 'Dancing Script', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--dark-color);
+    line-height: 1.6;
+    background-color: #F4F9FD; /* Very soft blue background */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color); /* Using baby blue for buttons */
+    color: var(--light-color); /* White text on blue */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3670A2; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+header {
+    height: 100vh;
+    position: relative;
+    color: var(--dark-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center top;
+    background-size: cover;
+    background-position: center 2%;
+    z-index: -2;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    z-index: -1;
+}
+
+.header-content {
+    background-color: rgba(254, 249, 231, 0.9);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(45, 75, 115, 0.2);
+    max-width: 90%;
+    width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: var(--font-fancy);
+    font-size: 3.5rem;
+    color: var(--accent-color); /* Using the brown-orange from Pooh */
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.parents {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.date {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--dark-color);
+}
+
+/* Countdown Styles */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown div {
+    background-color: rgba(248, 227, 163, 0.7); /* Transparent soft yellow */
+    color: var(--dark-color);
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 70px;
+    border: none; /* Removed border as requested */
+    box-shadow: 0 3px 10px rgba(90, 60, 30, 0.1);
+}
+
+.countdown span {
+    display: block;
+}
+
+.countdown span:first-child {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.countdown .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--secondary-color); /* Baby blue nav */
+    box-shadow: 0 2px 10px rgba(45, 75, 115, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav li {
+    padding: 20px;
+}
+
+nav a {
+    font-weight: 500;
+    position: relative;
+    color: var(--light-color); /* White text on blue nav */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color); /* Yellow underline */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Event Details Section */
+#event-details {
+    background-color: var(--soft-blue);
+    padding: 100px 0;
+    position: relative;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.detail-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(90, 60, 30, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Removed border as requested */
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(90, 60, 30, 0.15);
+}
+
+.detail-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.detail-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+/* RSVP Section */
+#rsvp {
+    background-color: #F4F9FD;
+    position: relative;
+}
+
+#rsvp form {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(45, 75, 115, 0.1);
+    border: none; /* Removed border as requested */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+
+.radio-group {
+    margin-bottom: 10px;
+}
+
+.radio-group input {
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#confirmation {
+    background-color: rgba(122, 145, 70, 0.2); /* Light green from tree */
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: none; /* Removed border as requested */
+}
+
+/* Registry Section */
+#registry {
+    background-color: var(--primary-color);
+    padding: 100px 0;
+    position: relative;
+}
+
+.registry-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.registry-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Removed border as requested */
+}
+
+.registry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.registry-card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color); /* Blue icons */
+}
+
+/* Gallery Section */
+#gallery {
+    background-color: var(--soft-blue);
+    position: relative;
+}
+
+.gallery-placeholder {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 60px;
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none; /* Removed border as requested */
+    box-shadow: 0 5px 15px rgba(90, 60, 30, 0.1);
+}
+
+.gallery-placeholder i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color); /* Dark blue */
+    color: var(--light-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+footer a:hover {
+    color: var(--soft-accent);
+}
+
+.contact {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .parents {
+        font-size: 1.5rem;
+    }
+    
+    .countdown div {
+        min-width: 60px;
+        padding: 8px;
+    }
+    
+    .countdown span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .detail-card {
+        padding: 20px;
+    }
+    
+    nav li {
+        padding: 15px 10px;
+    }
+    
+    #event-details, #rsvp, #registry, #gallery {
+        background-size: 120px; /* Smaller character images on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 30px 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .parents {
+        font-size: 1.3rem;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+    
+    .countdown div {
+        min-width: 50px;
+        padding: 5px;
+    }
+    
+    .countdown span:first-child {
+        font-size: 1.2rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        padding: 10px;
+    }
+    
+    #event-details, #rsvp, #registry, #gallery {
+        background-size: 80px; /* Even smaller character images on mobile */
+        background-position: bottom center;
+    }
+}
+
+/* Thanks Page Styles */
+.thanks-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.thanks-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+}
+
+.thanks-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+    z-index: -1;
+}
+
+.thanks-box {
+    background-color: rgba(254, 249, 231, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(45, 75, 115, 0.2);
+    max-width: 90%;
+    width: 600px;
+    position: relative;
+    z-index: 1;
+} 
