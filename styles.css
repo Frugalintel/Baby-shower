@@ -722,12 +722,11 @@ textarea {
 .decoration-lg { font-size: 3rem; }
 .decoration-xl { font-size: 3.6rem; }
 
-/* Simplified static decoration styling */
+/* Background decoration styling */
 .decoration {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.12;
     color: var(--accent-color);
     pointer-events: none; /* Prevents any interaction */
-    z-index: 1;
-    /* No animations or transitions */
+    z-index: -1; /* Move behind content */
 } 
