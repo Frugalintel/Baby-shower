@@ -117,23 +117,27 @@
             }
         }
 
-        /* Static decoration styling */
+        /* Background decoration styling */
         .decoration {
             position: absolute;
+            opacity: 0.12;
             color: var(--accent-color);
             pointer-events: none;
-            z-index: 1;
+            z-index: -1; /* Behind content */
         }
     </style>
 </head>
 <body>
     <div class="thanks-container">
-        <!-- Static decorations with inline styles - no animations -->
-        <i class="fas fa-heart decoration" style="top: 18%; left: 15%; font-size: 3.6rem; opacity: 0.15; transform: rotate(-12deg);"></i>
-        <i class="fas fa-star decoration" style="top: 30%; right: 20%; font-size: 2.4rem; opacity: 0.15; transform: rotate(15deg);"></i>
-        <i class="fas fa-baby decoration" style="bottom: 25%; left: 22%; font-size: 3rem; opacity: 0.15; transform: rotate(-8deg);"></i>
-        <i class="fas fa-gift decoration" style="bottom: 30%; right: 18%; font-size: 1.8rem; opacity: 0.15; transform: rotate(10deg);"></i>
-        <i class="fas fa-moon decoration" style="top: 55%; left: 30%; font-size: 1.2rem; opacity: 0.15; transform: rotate(20deg);"></i>
+        <!-- Background decorations, positioned away from interactive elements -->
+        <i class="fas fa-heart decoration" style="top: 18%; left: 8%; font-size: 3.6rem; transform: rotate(-12deg);"></i>
+        <i class="fas fa-star decoration" style="top: 25%; right: 10%; font-size: 2.4rem; transform: rotate(15deg);"></i>
+        <i class="fas fa-baby decoration" style="bottom: 20%; left: 12%; font-size: 3rem; transform: rotate(-8deg);"></i>
+        <i class="fas fa-gift decoration" style="bottom: 25%; right: 8%; font-size: 1.8rem; transform: rotate(10deg);"></i>
+        <i class="fas fa-moon decoration" style="top: 55%; left: 15%; font-size: 1.2rem; transform: rotate(20deg);"></i>
+        <i class="fas fa-sun decoration" style="top: 70%; right: 20%; font-size: 2.5rem; transform: rotate(-15deg);"></i>
+        <i class="fas fa-cloud decoration" style="bottom: 65%; left: 25%; font-size: 2.2rem; transform: rotate(5deg);"></i>
+        <i class="fas fa-music decoration" style="bottom: 40%; right: 15%; font-size: 1.5rem; transform: rotate(-20deg);"></i>
         
         <div class="border-blur"></div>
         <div class="thanks-box">
