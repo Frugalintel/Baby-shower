@@ -96,17 +96,6 @@ header::before {
     z-index: -2;
 }
 
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
-    z-index: -1;
-}
-
 .header-content {
     background-color: rgba(254, 249, 231, 0.9);
     padding: 40px 50px;
@@ -223,7 +212,6 @@ nav a:hover::after {
 #event-details {
     background-color: var(--soft-blue);
     padding: 100px 0;
-    position: relative;
 }
 
 .details-grid {
@@ -262,7 +250,6 @@ nav a:hover::after {
 /* RSVP Section */
 #rsvp {
     background-color: #F4F9FD;
-    position: relative;
 }
 
 #rsvp form {
@@ -323,7 +310,6 @@ textarea {
 #registry {
     background-color: var(--primary-color);
     padding: 100px 0;
-    position: relative;
 }
 
 .registry-links {
@@ -360,7 +346,6 @@ textarea {
 /* Gallery Section */
 #gallery {
     background-color: var(--soft-blue);
-    position: relative;
 }
 
 .gallery-placeholder {
@@ -528,4 +513,17 @@ footer a:hover {
     width: 600px;
     position: relative;
     z-index: 1;
+}
+
+/* Clean sections - no background images */
+#event-details::before,
+#rsvp::before,
+#registry::before,
+#gallery::before,
+#event-details::after,
+#rsvp::after,
+#registry::after,
+#gallery::after {
+    display: none;
+    content: none;
 } 
