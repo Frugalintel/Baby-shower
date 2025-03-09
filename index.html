@@ -72,7 +72,7 @@
                         <button class="action-btn copy-btn" onclick="copyAddress()">
                             <i class="fas fa-copy"></i> Copy Address
                         </button>
-                        <a href="https://maps.google.com/?q=Crispy's+Springfield+Gallery+1735+N+Main+St+Jacksonville+FL+32206" target="_blank" class="action-btn maps-btn">
+                        <a href="#" onclick="openMaps(event)" class="action-btn maps-btn">
                             <i class="fas fa-map-marked-alt"></i> Open in Maps
                         </a>
                     </div>
@@ -201,6 +201,24 @@
                     copyBtn.innerHTML = originalText;
                 }, 2000);
             });
+        }
+
+        // Function to open maps based on device
+        function openMaps(e) {
+            e.preventDefault();
+            const address = "Crispy's Springfield Gallery, 1735 N Main St, Jacksonville, FL 32206";
+            const encodedAddress = encodeURIComponent(address);
+            
+            // Detect iOS device
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            
+            if (isIOS) {
+                // Open in Apple Maps on iOS
+                window.open(`maps://maps.apple.com/?q=${encodedAddress}`, '_blank');
+            } else {
+                // Open in Google Maps on non-iOS
+                window.open(`https://maps.google.com/?q=${encodedAddress}`, '_blank');
+            }
         }
     </script>
 </body>
