@@ -68,6 +68,14 @@
                     <p>Upstairs Event Space</p>
                     <p>1735 N Main St</p>
                     <p>Jacksonville, FL 32206</p>
+                    <div class="address-actions">
+                        <button class="action-btn copy-btn" onclick="copyAddress()">
+                            <i class="fas fa-copy"></i> Copy Address
+                        </button>
+                        <a href="https://maps.google.com/?q=Crispy's+Springfield+Gallery+1735+N+Main+St+Jacksonville+FL+32206" target="_blank" class="action-btn maps-btn">
+                            <i class="fas fa-map-marked-alt"></i> Open in Maps
+                        </a>
+                    </div>
                 </div>
                 <div class="detail-card">
                     <i class="fas fa-info-circle"></i>
@@ -181,5 +189,19 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Function to copy address to clipboard
+        function copyAddress() {
+            const address = "Crispy's Springfield Gallery, Upstairs Event Space, 1735 N Main St, Jacksonville, FL 32206";
+            navigator.clipboard.writeText(address).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+    </script>
 </body>
-</html>
+</html> 
