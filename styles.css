@@ -594,13 +594,13 @@ footer a:hover {
 
 /* Thanks Page */
 .thanks-container {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center/cover;
     position: relative;
-    padding: 40px 20px;
+    padding: 80px 20px 20px;
 }
 
 .thanks-container::after {
@@ -617,7 +617,7 @@ footer a:hover {
 .thanks-box {
     background-color: var(--white);
     border-radius: var(--radius-lg);
-    padding: 60px 40px;
+    padding: 50px 40px;
     box-shadow: var(--shadow-lg);
     max-width: 650px;
     width: 90%;
@@ -630,6 +630,24 @@ footer a:hover {
     font-size: 2.8rem;
     margin-bottom: 30px;
     color: var(--dark-brown);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.thanks-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--honey);
+    border-radius: 10px;
+}
+
+.thanks-content {
+    margin-top: 20px;
 }
 
 .thanks-message {
@@ -644,8 +662,38 @@ footer a:hover {
     font-weight: 500;
 }
 
+.home-link-container {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
 .home-link {
-    margin-top: 20px;
+    min-width: 250px;
+    padding: 14px 30px;
+    font-size: 1.05rem;
+}
+
+.home-link i {
+    margin-right: 8px;
+}
+
+/* Adjust the thanks page footer to match */
+.thanks-container + footer {
+    background-color: var(--dark-brown);
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 0;
+    position: relative;
+}
+
+.thanks-container + footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--honey);
 }
 
 /* Responsive Styles */
