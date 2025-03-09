@@ -1,14 +1,14 @@
-/* Modern Winnie the Pooh Baby Shower Theme */
+/* Modern Sweet Baby Shower Theme */
 :root {
-    --honey: #FBDB65;      /* Primary yellow */
-    --honey-light: #FFF3D1; /* Light yellow background */
-    --pooh-blue: #A7CFEE;   /* Primary blue */
-    --pooh-blue-light: #E8F4FD; /* Light blue background */
-    --pooh-brown: #BB9167;  /* Accent brown */
-    --cream: #FFFDF7;      /* Background color */
-    --white: #FFFFFF;      /* White for cards */
-    --dark-brown: #5D4037; /* Text color */
-    --soft-gray: #79756E;  /* Secondary text color */
+    --primary-yellow: #FBDB65;  /* Renamed from honey */
+    --light-yellow: #FFF3D1;    /* Renamed from honey-light */
+    --primary-blue: #A7CFEE;    /* Renamed from pooh-blue */
+    --light-blue: #E8F4FD;      /* Renamed from pooh-blue-light */
+    --accent-brown: #BB9167;    /* Renamed from pooh-brown */
+    --cream: #FFFDF7;           /* Background color */
+    --white: #FFFFFF;           /* White for cards */
+    --dark-brown: #5D4037;      /* Text color */
+    --soft-gray: #79756E;       /* Secondary text color */
     
     --font-heading: 'Quicksand', sans-serif;
     --font-body: 'Poppins', sans-serif;
@@ -76,7 +76,7 @@ h2::after {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
     margin: 0.5em auto 0;
     border-radius: 10px;
 }
@@ -91,12 +91,12 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--pooh-brown);
+    color: var(--accent-brown);
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--honey);
+    color: var(--primary-yellow);
 }
 
 /* Buttons */
@@ -104,7 +104,7 @@ a:hover {
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 1rem;
-    background-color: var(--pooh-blue);
+    background-color: var(--primary-blue);
     color: var(--dark-brown);
     border-radius: 50px;
     padding: 12px 28px;
@@ -118,7 +118,7 @@ a:hover {
 }
 
 .btn:hover, .home-link:hover {
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
 }
@@ -164,7 +164,7 @@ header h1 {
 
 header h2 {
     font-size: 1.5rem;
-    color: var(--pooh-brown);
+    color: var(--accent-brown);
     margin-bottom: 1.2rem;
     font-family: var(--font-body);
     font-weight: 500;
@@ -199,7 +199,7 @@ header h2::after {
 }
 
 .countdown div {
-    background-color: var(--honey-light);
+    background-color: var(--light-yellow);
     color: var(--dark-brown);
     padding: 12px 5px;
     border-radius: var(--radius-sm);
@@ -228,7 +228,7 @@ header h2::after {
 
 /* Navigation */
 nav {
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
     box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
@@ -290,15 +290,15 @@ nav a:hover::after {
 }
 
 #special-requests {
-    background-color: var(--honey-light);
+    background-color: var(--light-yellow);
 }
 
 #rsvp {
-    background-color: var(--pooh-blue-light);
+    background-color: var(--light-blue);
 }
 
 #registry {
-    background-color: var(--honey-light);
+    background-color: var(--light-yellow);
 }
 
 #gallery {
@@ -335,7 +335,7 @@ nav a:hover::after {
 
 .detail-card i {
     font-size: 2rem;
-    color: var(--honey);
+    color: var(--primary-yellow);
     margin-bottom: 20px;
 }
 
@@ -375,7 +375,7 @@ nav a:hover::after {
 }
 
 .special-card h3 {
-    color: var(--pooh-brown);
+    color: var(--accent-brown);
     margin-bottom: 20px;
     font-size: 1.6rem;
     position: relative;
@@ -390,7 +390,7 @@ nav a:hover::after {
     transform: translateX(-50%);
     width: 40px;
     height: 2px;
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
 }
 
 .special-card p {
@@ -404,7 +404,7 @@ nav a:hover::after {
     font-size: 0.95rem;
     color: var(--soft-gray);
     margin-top: 20px;
-    background-color: var(--honey-light);
+    background-color: var(--light-yellow);
     display: inline-block;
     padding: 8px 20px;
     border-radius: 50px;
@@ -464,7 +464,7 @@ input[type="email"]:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--honey);
+    border-color: var(--primary-yellow);
     box-shadow: 0 0 0 3px rgba(251, 219, 101, 0.15);
     background-color: var(--white);
 }
@@ -484,7 +484,7 @@ textarea:focus {
 }
 
 #confirmation {
-    background-color: var(--honey-light);
+    background-color: var(--light-yellow);
     padding: 20px;
     border-radius: var(--radius-md);
     margin-top: 20px;
@@ -569,7 +569,7 @@ footer::before {
     right: 0;
     width: 100%;
     height: 6px;
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
 }
 
 footer p {
@@ -578,7 +578,7 @@ footer p {
 }
 
 footer a {
-    color: var(--honey);
+    color: var(--primary-yellow);
     font-weight: 500;
 }
 
@@ -642,7 +642,7 @@ footer a:hover {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
     border-radius: 10px;
 }
 
@@ -658,7 +658,7 @@ footer a:hover {
 
 .thanks-message:first-of-type {
     font-style: italic;
-    color: var(--pooh-brown);
+    color: var(--accent-brown);
     font-weight: 500;
 }
 
@@ -693,7 +693,7 @@ footer a:hover {
     right: 0;
     width: 100%;
     height: 6px;
-    background-color: var(--honey);
+    background-color: var(--primary-yellow);
 }
 
 /* Responsive Styles */
@@ -871,8 +871,8 @@ footer a:hover {
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.95rem;
-    background-color: var(--pooh-blue);
-    color: var(--dark-brown);
+    background-color: var(--dark-brown);
+    color: var(--white);
     border: none;
     border-radius: 50px;
     padding: 12px 24px;
@@ -890,7 +890,7 @@ footer a:hover {
 .action-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    opacity: 0.9;
+    background-color: var(--accent-brown);
 }
 
 .action-btn i {
