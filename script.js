@@ -62,8 +62,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Form is now handled by Formspree - no need to handle form submission here
-// We're keeping the local form handling as a fallback for testing
+// Form handling - Now using FormSubmit
 const rsvpForm = document.getElementById('rsvp-form');
 const confirmation = document.getElementById('confirmation');
 
@@ -86,6 +85,9 @@ if (rsvpForm) {
             // Show confirmation message
             rsvpForm.style.display = 'none';
             confirmation.classList.remove('hidden');
+            
+            // Alert for local testing
+            alert('Local testing: Form would be submitted to FormSubmit in production. Check console for form data.');
         });
     }
 }
