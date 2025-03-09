@@ -215,6 +215,7 @@ nav a:hover::after {
 #event-details {
     background-color: var(--soft-blue);
     padding: 100px 0;
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
 }
 
 .details-grid {
@@ -228,14 +229,15 @@ nav a:hover::after {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(90, 60, 30, 0.1);
+    box-shadow: 0 5px 20px rgba(45, 75, 115, 0.1);
+    border-bottom: 3px solid var(--primary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none; /* Removed border as requested */
 }
 
 .detail-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(90, 60, 30, 0.15);
+    box-shadow: 0 8px 25px rgba(45, 75, 115, 0.15);
 }
 
 .detail-card i {
@@ -253,6 +255,10 @@ nav a:hover::after {
 /* RSVP Section */
 #rsvp {
     background-color: #F4F9FD;
+    background-image: linear-gradient(135deg, rgba(78, 139, 194, 0.05) 25%, transparent 25%, 
+                      transparent 50%, rgba(78, 139, 194, 0.05) 50%, rgba(78, 139, 194, 0.05) 75%, 
+                      transparent 75%, transparent);
+    background-size: 40px 40px;
 }
 
 #rsvp form {
@@ -314,6 +320,7 @@ textarea {
 #registry {
     background-color: var(--primary-color);
     padding: 100px 0;
+    background-image: radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 #registry h2 {
@@ -384,6 +391,10 @@ textarea {
 /* Gallery Section */
 #gallery {
     background-color: var(--soft-blue);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, 
+                      transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, 
+                      transparent 75%, transparent);
+    background-size: 30px 30px;
 }
 
 .gallery-placeholder {
@@ -546,14 +557,16 @@ footer a:hover {
 }
 
 .thanks-box {
-    background-color: rgba(254, 249, 231, 0.95);
+    background: linear-gradient(145deg, rgba(254, 249, 231, 0.95), rgba(254, 249, 231, 0.8));
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(45, 75, 115, 0.2);
+    box-shadow: 0 5px 20px rgba(45, 75, 115, 0.2), 
+                inset 0 0 60px rgba(255, 255, 255, 0.5);
     max-width: 90%;
     width: 600px;
     position: relative;
     z-index: 1;
+    border-left: 5px solid var(--accent-color);
 }
 
 /* Clean sections - no background images */
@@ -626,9 +639,19 @@ h1.main-title,
 
 /* Section Headers */
 .section h2 {
-    font-family: var(--font-fancy);
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    bottom: 0;
+    left: 10%;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
 }
 
 /* Detail Cards */
@@ -729,4 +752,35 @@ textarea {
     color: var(--accent-color);
     pointer-events: none; /* Prevents any interaction */
     z-index: -1; /* Move behind content */
+}
+
+/* Button Enhancement */
+.btn {
+    background-image: linear-gradient(to right, var(--secondary-color), var(--dark-color));
+    box-shadow: 0 4px 15px rgba(45, 75, 115, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-image: linear-gradient(to right, var(--dark-color), var(--secondary-color));
+    box-shadow: 0 6px 20px rgba(45, 75, 115, 0.3);
+}
+
+/* Header Content Enhancement */
+.header-content {
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 5px 25px rgba(90, 60, 30, 0.2);
+}
+
+/* Card Enhancements */
+.detail-card, .registry-card, .gallery-placeholder, #rsvp form {
+    box-shadow: 0 5px 20px rgba(45, 75, 115, 0.1);
+    border-radius: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover, .registry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(45, 75, 115, 0.15);
 } 
