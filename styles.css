@@ -720,4 +720,14 @@ textarea {
 .decoration-sm { font-size: 1.8rem; }
 .decoration-md { font-size: 2.4rem; }
 .decoration-lg { font-size: 3rem; }
-.decoration-xl { font-size: 3.6rem; } 
+.decoration-xl { font-size: 3.6rem; }
+
+/* Simplified static decoration styling */
+.decoration {
+    position: absolute;
+    opacity: 0.15;
+    color: var(--accent-color);
+    pointer-events: none; /* Prevents any interaction */
+    z-index: 1;
+    /* No animations or transitions */
+} 
