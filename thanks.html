@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Baby Boy Shower</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .thanks-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                        url('https://m.media-amazon.com/images/I/81UHbpwSCaL.jpg') no-repeat center center/cover;
+            background-position: center 2%;
+        }
+        
+        .thanks-box {
+            background-color: rgba(254, 249, 231, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(45, 75, 115, 0.2);
+            max-width: 90%;
+            width: 600px;
+        }
+        
+        .thanks-title {
+            font-family: var(--font-fancy);
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .thanks-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            color: var(--primary-color);
+        }
+
+        .icon-container {
+            margin: 20px 0;
+        }
+
+        .icon-container i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin: 0 10px;
+        }
+
+        @media (max-width: 480px) {
+            .thanks-box {
+                padding: 30px 20px;
+            }
+            
+            .thanks-title {
+                font-size: 2.5rem;
+            }
+            
+            .thanks-message {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thanks-container">
+        <div class="thanks-box">
+            <h1 class="thanks-title">Thank You!</h1>
+            <p class="thanks-message">We're so excited to have you join us in celebrating our little boy's upcoming arrival!</p>
+            <div class="icon-container">
+                <i class="fas fa-baby"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div>
+                <a href="index.html" class="home-link">← Return to Baby Shower Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
