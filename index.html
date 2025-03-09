@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winnie the Pooh Baby Boy Shower</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-blur-border"></div>
+        <div class="header-content">
+            <h1>Baby Boy Shower</h1>
+            <h2>Sweet as Hunny, Our Little Boy</h2>
+            <p class="parents">Cait & Jayden</p>
+            <p class="date">Saturday, May 17, 2025 • 11:00 AM - 2:00 PM</p>
+            <div class="countdown" id="countdown">
+                <div>
+                    <span id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div>
+                    <span id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div>
+                    <span id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div>
+                    <span id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#event-details">Details</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#registry">Registry</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="event-details" class="section">
+        <div class="container">
+            <h2>Event Details</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>When</h3>
+                    <p>Saturday, May 17, 2025</p>
+                    <p>11:00 AM - 2:00 PM</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Where</h3>
+                    <p>Crispy's Springfield Gallery</p>
+                    <p>Upstairs Event Space</p>
+                    <p>1735 N Main St</p>
+                    <p>Jacksonville, FL 32206</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Details</h3>
+                    <p>Join us for hunny treats, woodland games, and celebrating our little boy's upcoming arrival! Pooh and his friends can't wait to meet him!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section">
+        <div class="container">
+            <h2>RSVP</h2>
+            <p>Please let us know if you can join our celebration for Baby Boy by October 1st.</p>
+            
+            <!-- Form with JS fallback handling -->
+            <form id="rsvp-form" onsubmit="handleFormSubmit(event)">
+                <!-- Basic form fields -->
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" name="guests" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Will you be attending?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="attending-yes" name="attending" value="yes" required>
+                        <label for="attending-yes">Yes, I'll be there!</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="attending-no" name="attending" value="no" required>
+                        <label for="attending-no">Sorry, I can't make it</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit RSVP</button>
+            </form>
+            <div id="confirmation" class="hidden">
+                <p>Thank you for your response! We've received your RSVP.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="registry" class="section">
+        <div class="container">
+            <h2>Gift Registry</h2>
+            <p>Your presence is present enough, but if you'd like to celebrate with a gift, we've registered at:</p>
+            <div class="registry-links">
+                <a href="https://www.amazon.com" target="_blank" class="registry-card">
+                    <i class="fab fa-amazon"></i>
+                    <span>Amazon</span>
+                </a>
+                <a href="https://www.target.com" target="_blank" class="registry-card">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Target</span>
+                </a>
+                <a href="https://www.buybuybaby.com" target="_blank" class="registry-card">
+                    <i class="fas fa-baby"></i>
+                    <span>Buy Buy Baby</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <p>Check back after the event to see photos!</p>
+            <div class="gallery-placeholder">
+                <i class="fas fa-images"></i>
+                <p>Photos coming soon</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>With love, Cait & Jayden</p>
+            <p class="contact">Questions? Contact us at <a href="mailto:jaydensaxton.c@outlook.com">jaydensaxton.c@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
