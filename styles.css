@@ -50,6 +50,8 @@ a:hover {
 .section {
     padding: 80px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn {
@@ -692,4 +694,35 @@ textarea {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-} 
+}
+
+/* Add general decoration styles */
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-decoration {
+    position: absolute;
+    font-size: 1.8rem;
+    opacity: 0.15;
+    color: var(--dark-color);
+    z-index: 0;
+}
+
+/* Add subtle animation for floating effect */
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+.floating-decoration {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Stagger animations */
+.decoration-1 { animation-delay: 0s; }
+.decoration-2 { animation-delay: 1s; }
+.decoration-3 { animation-delay: 2s; }
+.decoration-4 { animation-delay: 3s; } 
