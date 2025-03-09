@@ -400,15 +400,25 @@ nav a:hover::after {
 }
 
 .books-note {
-    font-style: italic;
-    font-size: 0.95rem;
     color: var(--soft-gray);
     margin-top: 20px;
     background-color: var(--light-yellow);
     display: inline-block;
     padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 500;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.diaper-note {
+    color: var(--soft-gray);
+    margin-top: 20px;
+    background-color: var(--light-blue);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-style: italic;
 }
 
 /* RSVP Section */
@@ -832,6 +842,11 @@ footer a:hover {
     }
     
     .books-note {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .diaper-note {
         padding: 6px 15px;
         font-size: 0.9rem;
     }
