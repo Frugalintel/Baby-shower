@@ -90,10 +90,7 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Form handling function - JavaScript fallback when FormSubmit fails
 function handleFormSubmit(event) {
-    // Don't prevent default submission if FormSubmit is properly configured
-    // This allows the form to submit normally to FormSubmit's endpoint
-    // The code below only runs if the normal form submission fails
-    
+    // Don't prevent default form submission to allow POST to FormSubmit
     // Log form data for debug purposes
     const form = document.getElementById('rsvp-form');
     const name = form.elements['name'].value;
@@ -110,8 +107,8 @@ function handleFormSubmit(event) {
         message
     });
     
-    // Show confirmation message and redirect is now handled by FormSubmit
-    // through the _next hidden field
+    // Let the form submit naturally to FormSubmit
+    // No event.preventDefault() so the form will POST properly
 }
 
 // Add active class to nav links on scroll
