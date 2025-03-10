@@ -90,9 +90,11 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Form handling function - JavaScript fallback when FormSubmit fails
 function handleFormSubmit(event) {
-    event.preventDefault();
+    // Don't prevent default submission if FormSubmit is properly configured
+    // This allows the form to submit normally to FormSubmit's endpoint
+    // The code below only runs if the normal form submission fails
     
-    // Get form data
+    // Log form data for debug purposes
     const form = document.getElementById('rsvp-form');
     const name = form.elements['name'].value;
     const email = form.elements['email'].value;
@@ -100,7 +102,6 @@ function handleFormSubmit(event) {
     const attending = form.querySelector('input[name="attending"]:checked').value;
     const message = form.elements['message'].value;
     
-    // Log form data for debug purposes
     console.log('RSVP Form Submission:', {
         name,
         email,
@@ -109,30 +110,8 @@ function handleFormSubmit(event) {
         message
     });
     
-    // Attempt to send form to FormSubmit as a backup
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('guests', guests);
-    formData.append('attending', attending);
-    formData.append('message', message);
-    
-    // Try to send the form data using fetch
-    fetch('https://formsubmit.co/jaydensaxton.c@outlook.com', {
-        method: 'POST',
-        body: formData
-    }).catch(error => {
-        console.error('Error:', error);
-    });
-    
-    // Show confirmation message
-    form.style.display = 'none';
-    document.getElementById('confirmation').classList.remove('hidden');
-    
-    // Redirect to thanks page
-    setTimeout(() => {
-        window.location.href = 'thanks.html';
-    }, 2000);
+    // Show confirmation message and redirect is now handled by FormSubmit
+    // through the _next hidden field
 }
 
 // Add active class to nav links on scroll
