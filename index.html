@@ -91,14 +91,20 @@
             </div>
             <div class="special-requests">
                 <div class="special-card">
+                    <div class="card-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
                     <h3>Diaper Raffle</h3>
-                    <p>Bring a pack of diapers for your chance to win a special prize</p>
-                    <p class="diaper-note">The diapers can be any size</p>
+                    <p>Bring a pack of diapers in any size for your chance to win a special prize.</p>
+                    <p class="diaper-note">Don't forget to add your name for the raffle</p>
                 </div>
                 <div class="special-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
                     <h3>Books for Baby</h3>
-                    <p>Please bring a book instead of a card to help build our baby boy's library with stories of adventure and fun that will inspire his imagination!</p>
-                    <p class="books-note">Please sign your book so we'll remember you</p>
+                    <p>One little request, we hope it's not hard. Please bring a book instead of a card.</p>
+                    <p class="books-note">Please sign the book so we know who it's from</p>
                 </div>
             </div>
         </div>
@@ -111,7 +117,11 @@
             </div>
             <p>Please let us know if you can join our celebration by October 1st.</p>
             
-            <form id="rsvp-form" onsubmit="handleFormSubmit(event)">
+            <form id="rsvp-form" action="https://formsubmit.co/jaydensaxton.c@outlook.com" method="POST" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" name="_subject" value="New RSVP Submission">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="thanks.html">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
