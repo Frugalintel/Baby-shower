@@ -117,7 +117,7 @@
             </div>
             <p>Please let us know if you can join our celebration by May 7th.</p>
             
-            <form id="rsvp-form" action="https://formsubmit.co/jaydensaxton1017@gmail.com" method="POST" onsubmit="setTimeout(function(){ window.location.href = 'thanks.html'; }, 1000); return true;">
+            <form id="rsvp-form" action="https://formsubmit.co/jaydensaxton1017@gmail.com" method="POST">
                 <input type="hidden" name="_subject" value="New RSVP Submission">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
@@ -219,9 +219,14 @@
             // Let the form submit naturally
             // Set a flag in localStorage so we know the form was submitted
             localStorage.setItem('formSubmitted', 'true');
+            
+            // Add a small delay before redirecting to ensure the form submission goes through
+            setTimeout(function() {
+                window.location.href = 'thanks.html';
+            }, 1500);
         });
 
-        // Check if we should redirect based on localStorage flag
+        // Check if we should show confirmation based on localStorage flag
         document.addEventListener('DOMContentLoaded', function() {
             if (localStorage.getItem('formSubmitted') === 'true') {
                 // Clear the flag
@@ -229,10 +234,6 @@
                 // Show confirmation message
                 document.getElementById('rsvp-form').style.display = 'none';
                 document.getElementById('confirmation').classList.remove('hidden');
-                // Redirect after showing confirmation
-                setTimeout(function() {
-                    window.location.href = 'thanks.html';
-                }, 1500);
             }
         });
     </script>
