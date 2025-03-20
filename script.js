@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const iframe = document.querySelector(".rsvp-iframe");
     if (iframe) {
         iframe.addEventListener("load", () => {
-            iframe.style.height = "1200px"; // Set to full form height
+            iframe.style.height = "1300px"; // Match CSS base height
             // Inject CSS to disable scrolling in iframe content
             const disableScroll = `
                 <style>
@@ -124,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         iframe.addEventListener("touchmove", (e) => {
             e.preventDefault();
-            // Pass touch movement to parent window (simplified)
             window.scrollBy(0, -e.touches[0].clientY + iframe.lastTouchY);
             iframe.lastTouchY = e.touches[0].clientY;
         }, { passive: false });
