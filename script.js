@@ -1,104 +1,164 @@
-// Set the countdown date (matches HTML: May 17, 2025, 11:30 AM)
-const countdownDate = new Date("May 17, 2025 11:30:00").getTime();
+// Set countdown date with timezone
+const countdownDate = new Date("2025-05-17T11:30:00-04:00").getTime();
 
-// Countdown Timer
+// Optimized Countdown Timer
 const countdown = setInterval(() => {
-    const now = new Date().getTime();
+    const now = Date.now();
     const distance = countdownDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
-    document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
-    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
-    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
 
     if (distance < 0) {
         clearInterval(countdown);
         document.getElementById("countdown").innerHTML = "The baby shower has begun!";
+        return;
     }
+
+    const timeUnits = {
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+    };
+
+    Object.entries(timeUnits).forEach(([unit, value]) => {
+        document.getElementById(unit).textContent = String(value).padStart(2, "0");
+    });
 }, 1000);
 
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll("nav a").forEach((link) => {
+// Debounce function
+const debounce = (func, wait) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
+// Smooth Scrolling with offset
+document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
         const targetId = link.getAttribute("href");
         const targetElement = document.querySelector(targetId);
-        targetElement.scrollIntoView({ behavior: "smooth" });
+        const navHeight = document.querySelector("nav").offsetHeight;
+        
+        window.scrollTo({
+            top: targetElement.offsetTop - navHeight,
+            behavior: "smooth"
+        });
     });
 });
 
-// Active Navigation on Scroll
-window.addEventListener("scroll", () => {
+// Active Navigation with debounced scroll
+window.addEventListener("scroll", debounce(() => {
     const sections = document.querySelectorAll(".section");
     const navLinks = document.querySelectorAll("nav a");
+    const navHeight = document.querySelector("nav").offsetHeight;
     let currentSection = "";
 
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 100) {
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - navHeight - 100;
+        if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute("id");
         }
     });
 
-    navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${currentSection}`) {
-            link.classList.add("active");
-        }
+    navLinks.forEach(link => {
+        link.classList.toggle("active", 
+            link.getAttribute("href") === `#${currentSection}`);
     });
-});
+}, 100));
 
-// Fade-in Animation for Sections
+// Fade-in Animation and Scroll Prevention
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
         (entries) => {
-            entries.forEach((entry) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("fade-in");
+                    observer.unobserve(entry.target);
                 }
             });
         },
-        { threshold: 0.1 }
+        { 
+            threshold: 0.1,
+            rootMargin: "0px 0px -10% 0px"
+        }
     );
 
-    document.querySelectorAll(".section").forEach((section) => {
-        section.style.opacity = "0";
-        section.style.transition = "opacity 1s ease-in-out";
+    document.querySelectorAll(".section").forEach(section => {
+        Object.assign(section.style, {
+            opacity: "0",
+            transition: "opacity 1s ease-in-out",
+            willChange: "opacity"
+        });
         observer.observe(section);
     });
 
-    // Define fade-in style
-    const style = document.createElement("style");
-    style.textContent = `
-        .fade-in { opacity: 1 !important; }
-        nav a.active { color: var(--primary-color, #3498db); font-weight: bold; }
-    `;
-    document.head.appendChild(style);
+    // Prevent iframe scroll trapping
+    const iframe = document.querySelector(".rsvp-iframe");
+    if (iframe) {
+        iframe.addEventListener("load", () => {
+            iframe.style.height = "1200px"; // Set to full form height
+            // Inject CSS to disable scrolling in iframe content
+            const disableScroll = `
+                <style>
+                    body { 
+                        overflow: hidden !important; 
+                        height: 100% !important; 
+                        position: fixed !important; 
+                    }
+                </style>
+            `;
+            try {
+                iframe.contentDocument.head.insertAdjacentHTML("beforeend", disableScroll);
+            } catch (e) {
+                console.warn("Could not modify iframe content:", e);
+            }
+        });
+
+        // Prevent scroll events from being captured by iframe
+        iframe.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            window.scrollBy(0, e.deltaY);
+        }, { passive: false });
+
+        iframe.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            // Pass touch movement to parent window (simplified)
+            window.scrollBy(0, -e.touches[0].clientY + iframe.lastTouchY);
+            iframe.lastTouchY = e.touches[0].clientY;
+        }, { passive: false });
+
+        iframe.addEventListener("touchstart", (e) => {
+            iframe.lastTouchY = e.touches[0].clientY;
+        }, { passive: false });
+    }
 });
 
-// Maps Function (moved from inline HTML)
+// Maps Function
 function openMaps(e) {
     e.preventDefault();
     const address = "Crispy's Springfield Gallery, 1735 N Main St, Jacksonville, FL 32206";
     const encodedAddress = encodeURIComponent(address);
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const url = isIOS 
+        ? `maps://maps.apple.com/?q=${encodedAddress}`
+        : `https://maps.google.com/?q=${encodedAddress}`;
 
-    try {
-        window.open(
-            isIOS
-                ? `maps://maps.apple.com/?q=${encodedAddress}`
-                : `https://maps.google.com/?q=${encodedAddress}`,
-            "_blank"
-        );
-    } catch (error) {
+    const newWindow = window.open(url, "_blank");
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
         alert("Unable to open maps. Search manually: " + address);
     }
 }
 
-// Attach maps function to button
 document.querySelector(".maps-btn")?.addEventListener("click", openMaps);
+
+// Error checking
+document.addEventListener("DOMContentLoaded", () => {
+    const requiredIds = ["days", "hours", "minutes", "seconds", "countdown"];
+    requiredIds.forEach(id => {
+        if (!document.getElementById(id)) {
+            console.error(`Required element #${id} not found in DOM`);
+        }
+    });
+});
