@@ -1,26 +1,22 @@
 /* Modern Sweet Baby Shower Theme */
 :root {
-    --primary-yellow: #FBDB65;  /* Renamed from honey */
-    --light-yellow: #FFF3D1;    /* Renamed from honey-light */
-    --primary-blue: #A7CFEE;    /* Renamed from pooh-blue */
-    --light-blue: #E8F4FD;      /* Renamed from pooh-blue-light */
-    --accent-brown: #BB9167;    /* Renamed from pooh-brown */
-    --cream: #FFFDF7;           /* Background color */
-    --white: #FFFFFF;           /* White for cards */
-    --dark-brown: #5D4037;      /* Text color */
-    --soft-gray: #79756E;       /* Secondary text color */
-    
+    --primary-yellow: #FBDB65;
+    --light-yellow: #FFF3D1;
+    --primary-blue: #A7CFEE;
+    --light-blue: #E8F4FD;
+    --accent-brown: #BB9167;
+    --cream: #FFFDF7;
+    --white: #FFFFFF;
+    --dark-brown: #5D4037;
+    --soft-gray: #79756E;
     --font-heading: 'Quicksand', sans-serif;
     --font-body: 'Poppins', sans-serif;
-    
     --shadow-sm: 0 2px 6px rgba(93, 64, 55, 0.05);
     --shadow-md: 0 4px 10px rgba(93, 64, 55, 0.06);
     --shadow-lg: 0 6px 16px rgba(93, 64, 55, 0.08);
-    
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
-    
     --transition: all 0.3s ease;
 }
 
@@ -50,7 +46,6 @@ body {
     padding: 0 20px;
 }
 
-/* Typography */
 h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--dark-brown);
@@ -61,16 +56,12 @@ h1, h2, h3 {
     text-align: center;
 }
 
-h1 {
-    font-size: 3.4rem;
-}
-
+h1 { font-size: 3.4rem; }
 h2 {
     font-size: 2.4rem;
     position: relative;
     margin-bottom: 1.5em;
 }
-
 h2::after {
     content: '';
     display: block;
@@ -80,26 +71,15 @@ h2::after {
     margin: 0.5em auto 0;
     border-radius: 10px;
 }
-
-h3 {
-    font-size: 1.6rem;
-}
-
-p {
-    margin-bottom: 1em;
-}
-
+h3 { font-size: 1.6rem; }
+p { margin-bottom: 1em; }
 a {
     text-decoration: none;
     color: var(--accent-brown);
     transition: var(--transition);
 }
+a:hover { color: var(--primary-yellow); }
 
-a:hover {
-    color: var(--primary-yellow);
-}
-
-/* Buttons */
 .btn, .home-link {
     font-family: var(--font-heading);
     font-weight: 600;
@@ -116,14 +96,12 @@ a:hover {
     text-decoration: none;
     text-align: center;
 }
-
 .btn:hover, .home-link:hover {
     background-color: var(--primary-yellow);
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
 }
 
-/* Header */
 header {
     min-height: 100vh;
     background: url('https://frugalintel.github.io/Baby-shower/Images/wtp-backround.jpg') no-repeat center center/cover;
@@ -134,7 +112,6 @@ header {
     position: relative;
     padding: 40px 20px;
 }
-
 header::after {
     content: '';
     position: absolute;
@@ -145,7 +122,6 @@ header::after {
     background-color: rgba(255, 253, 247, 0.7);
     z-index: 1;
 }
-
 .header-content {
     background-color: var(--white);
     border-radius: var(--radius-lg);
@@ -156,12 +132,7 @@ header::after {
     z-index: 2;
     box-shadow: var(--shadow-lg);
 }
-
-header h1 {
-    color: var(--dark-brown);
-    line-height: 1.1;
-}
-
+header h1 { color: var(--dark-brown); line-height: 1.1; }
 header h2 {
     font-size: 1.5rem;
     color: var(--accent-brown);
@@ -169,11 +140,7 @@ header h2 {
     font-family: var(--font-body);
     font-weight: 500;
 }
-
-header h2::after {
-    display: none;
-}
-
+header h2::after { display: none; }
 .parents {
     font-family: var(--font-heading);
     font-size: 1.8rem;
@@ -181,7 +148,6 @@ header h2::after {
     margin-bottom: 0.6rem;
     font-weight: 600;
 }
-
 .date {
     font-size: 1.2rem;
     color: var(--soft-gray);
@@ -190,14 +156,12 @@ header h2::after {
     font-weight: 400;
 }
 
-/* Countdown */
 .countdown {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 25px;
 }
-
 .countdown div {
     background-color: var(--light-yellow);
     color: var(--dark-brown);
@@ -206,18 +170,13 @@ header h2::after {
     min-width: 70px;
     box-shadow: var(--shadow-sm);
 }
-
-.countdown span {
-    display: block;
-}
-
+.countdown span { display: block; }
 .countdown span:first-child {
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 5px;
 }
-
 .countdown .label {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -226,7 +185,6 @@ header h2::after {
     opacity: 0.8;
 }
 
-/* Navigation */
 nav {
     background-color: var(--primary-yellow);
     box-shadow: var(--shadow-md);
@@ -234,19 +192,13 @@ nav {
     top: 0;
     z-index: 1000;
 }
-
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
 }
-
-nav li {
-    padding: 0;
-    margin: 0 5px;
-}
-
+nav li { padding: 0; margin: 0 5px; }
 nav a {
     font-family: var(--font-heading);
     font-weight: 600;
@@ -257,7 +209,6 @@ nav a {
     position: relative;
     transition: var(--transition);
 }
-
 nav a::after {
     content: '';
     position: absolute;
@@ -269,32 +220,16 @@ nav a::after {
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
+nav a:hover { color: var(--dark-brown); }
+nav a:hover::after { transform: scaleX(1); }
 
-nav a:hover {
-    color: var(--dark-brown);
-}
-
-nav a:hover::after {
-    transform: scaleX(1);
-}
-
-/* Section Styles */
-.section {
-    padding: 100px 0;
-    position: relative;
-}
-
-/* Section backgrounds - alternating flat colors */
-#event-details {
-    background-color: var(--cream);
-}
-
+.section { padding: 100px 0; position: relative; }
+#event-details { background-color: var(--cream); }
 #special-requests {
     background-color: var(--light-yellow);
     position: relative;
     overflow: hidden;
 }
-
 #special-requests::before {
     content: '';
     position: absolute;
@@ -308,22 +243,10 @@ nav a:hover::after {
     opacity: 0.3;
     pointer-events: none;
 }
-
-#rsvp {
-    background-color: var(--light-blue);
-}
-
-#registry {
-    background-color: var(--light-yellow);
-}
-
-#gallery {
-    background-color: var(--cream);
-}
-
-.section-heading {
-    margin-bottom: 50px;
-}
+#rsvp { background-color: var(--light-blue); }
+#registry { background-color: var(--light-yellow); }
+#gallery { background-color: var(--cream); }
+.section-heading { margin-bottom: 50px; }
 
 .details-grid {
     display: grid;
@@ -331,7 +254,6 @@ nav a:hover::after {
     gap: 30px;
     margin-top: 20px;
 }
-
 .detail-card {
     background-color: var(--white);
     border-radius: var(--radius-md);
@@ -343,28 +265,18 @@ nav a:hover::after {
     flex-direction: column;
     height: 100%;
 }
-
 .detail-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
-
 .detail-card i {
     font-size: 2rem;
     color: var(--primary-yellow);
     margin-bottom: 20px;
 }
+.detail-card h3 { margin-bottom: 15px; }
+.detail-card p { font-size: 1.1rem; margin-bottom: 0.5em; }
 
-.detail-card h3 {
-    margin-bottom: 15px;
-}
-
-.detail-card p {
-    font-size: 1.1rem;
-    margin-bottom: 0.5em;
-}
-
-/* Special Requests Section */
 .special-requests {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -374,7 +286,6 @@ nav a:hover::after {
     position: relative;
     z-index: 2;
 }
-
 .special-card {
     background-color: var(--white);
     border-radius: var(--radius-md);
@@ -389,7 +300,6 @@ nav a:hover::after {
     border: 1px solid rgba(187, 145, 103, 0.1);
     overflow: hidden;
 }
-
 .special-card::before {
     content: '';
     position: absolute;
@@ -400,12 +310,10 @@ nav a:hover::after {
     background-color: var(--primary-yellow);
     border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
-
 .special-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
 }
-
 .special-card h3 {
     color: var(--accent-brown);
     margin-bottom: 25px;
@@ -414,7 +322,6 @@ nav a:hover::after {
     position: relative;
     padding-bottom: 15px;
 }
-
 .special-card h3::after {
     content: '';
     position: absolute;
@@ -425,20 +332,17 @@ nav a:hover::after {
     height: 2px;
     background-color: var(--primary-yellow);
 }
-
 .special-card p {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 25px;
     color: var(--dark-brown);
 }
-
 .card-icon {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
-
 .card-icon i {
     font-size: 2.2rem;
     color: var(--primary-yellow);
@@ -453,13 +357,10 @@ nav a:hover::after {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
-
 .special-card:hover .card-icon i {
     transform: scale(1.1);
     color: var(--accent-brown);
 }
-
-/* Note style for bottom text */
 .note-bubble {
     color: var(--dark-brown);
     margin-top: auto;
@@ -480,104 +381,29 @@ nav a:hover::after {
     position: relative;
     z-index: 1;
 }
+.books-note, .diaper-note { display: block; }
 
-.books-note, .diaper-note {
-    display: block;
-}
-
-/* RSVP Section */
 #rsvp p {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
 }
-
-#rsvp form {
-    max-width: 600px;
+.form-container {
+    max-width: 640px;
     margin: 40px auto 0;
-    text-align: left;
     background-color: var(--white);
     border-radius: var(--radius-md);
-    padding: 40px;
     box-shadow: var(--shadow-md);
+    overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--dark-brown);
-    font-size: 1rem;
-}
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
+.form-container iframe {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #eee;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: var(--transition);
-    background-color: #fafafa;
-    font-weight: 300;
+    border: none;
+    display: block;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--primary-yellow);
-    box-shadow: 0 0 0 3px rgba(251, 219, 101, 0.15);
-    background-color: var(--white);
-}
-
-.radio-group {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.radio-group input {
-    margin-right: 10px;
-}
-
-.hidden {
-    display: none;
-}
-
-#confirmation {
-    background-color: var(--light-yellow);
-    padding: 20px;
-    border-radius: var(--radius-md);
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 500;
-    color: var(--dark-brown);
-}
-
-/* Button container for the RSVP submit button */
-#rsvp form button[type="submit"] {
-    margin: 15px auto 0;
-    width: 80%;
-    max-width: 350px;
-    padding: 14px 30px;
-    font-size: 1.05rem;
-    align-self: center;
-}
-
-/* Registry Section */
 .registry-links {
     display: flex;
     justify-content: center;
@@ -585,7 +411,6 @@ textarea:focus {
     gap: 20px;
     margin-top: 30px;
 }
-
 .registry-card {
     background-color: var(--white);
     border-radius: var(--radius-md);
@@ -595,12 +420,10 @@ textarea:focus {
     text-decoration: none;
     display: inline-block;
 }
-
 .registry-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
-
 .registry-card span {
     font-family: var(--font-heading);
     font-size: 1.2rem;
@@ -608,7 +431,6 @@ textarea:focus {
     color: var(--dark-brown);
 }
 
-/* Gallery Section */
 .gallery-placeholder {
     background-color: var(--white);
     border-radius: var(--radius-md);
@@ -620,14 +442,12 @@ textarea:focus {
     align-items: center;
     justify-content: center;
 }
-
 .gallery-placeholder p {
     font-size: 1.2rem;
     color: var(--soft-gray);
     font-style: italic;
 }
 
-/* Footer */
 footer {
     background-color: var(--dark-brown);
     color: #fff;
@@ -635,7 +455,6 @@ footer {
     text-align: center;
     position: relative;
 }
-
 footer::before {
     content: '';
     position: absolute;
@@ -645,28 +464,11 @@ footer::before {
     height: 6px;
     background-color: var(--primary-yellow);
 }
+footer p { margin-bottom: 15px; opacity: 0.9; }
+footer a { color: var(--primary-yellow); font-weight: 500; }
+footer a:hover { color: white; }
+.contact { margin-top: 25px; font-size: 0.9rem; opacity: 0.8; }
 
-footer p {
-    margin-bottom: 15px;
-    opacity: 0.9;
-}
-
-footer a {
-    color: var(--primary-yellow);
-    font-weight: 500;
-}
-
-footer a:hover {
-    color: white;
-}
-
-.contact {
-    margin-top: 25px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Thanks Page */
 .thanks-container {
     min-height: 90vh;
     display: flex;
@@ -676,7 +478,6 @@ footer a:hover {
     position: relative;
     padding: 80px 20px 20px;
 }
-
 .thanks-container::after {
     content: '';
     position: absolute;
@@ -690,7 +491,6 @@ footer a:hover {
     opacity: 0.15;
     z-index: 1;
 }
-
 .thanks-box {
     background-color: var(--white);
     border-radius: var(--radius-md);
@@ -703,7 +503,6 @@ footer a:hover {
     text-align: center;
     border-top: 5px solid var(--primary-yellow);
 }
-
 .thanks-quote {
     font-size: 1.2rem;
     margin: 20px 0;
@@ -718,7 +517,6 @@ footer a:hover {
     font-style: italic;
     opacity: 0.85;
 }
-
 .thanks-title {
     font-size: 2.8rem;
     color: var(--dark-brown);
@@ -726,14 +524,12 @@ footer a:hover {
     position: relative;
     text-decoration: none;
 }
-
 .thanks-content {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-
 .thanks-message {
     font-size: 1.3rem;
     color: var(--dark-brown);
@@ -741,240 +537,79 @@ footer a:hover {
     line-height: 1.6;
     font-weight: 500;
 }
-
 .home-link-container {
     margin-top: 40px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
 }
-
 .home-link {
-    background-color: var(--primary-blue);
-    color: var(--dark-brown);
     min-width: 250px;
     width: 80%;
     max-width: 350px;
     padding: 14px 30px;
     font-size: 1.05rem;
-    border-radius: 50px;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
 }
+.home-link i { margin-right: 8px; }
+.thanks-container + footer { margin-top: 0; padding: 40px 0; }
 
-.home-link:hover {
-    background-color: var(--primary-yellow);
-    color: var(--dark-brown);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.home-link i {
-    margin-right: 8px;
-}
-
-/* Adjust the thanks page footer to match */
-.thanks-container + footer {
-    background-color: var(--dark-brown);
-    color: #fff;
-    padding: 40px 0;
-    margin-top: 0;
-    position: relative;
-}
-
-.thanks-container + footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 6px;
-    background-color: var(--primary-yellow);
-}
-
-/* Responsive Styles */
 @media (max-width: 992px) {
-    .section {
-        padding: 80px 0;
-    }
-    
-    h1 {
-        font-size: 2.8rem;
-    }
-    
-    h2 {
-        font-size: 2.2rem;
-    }
+    .section { padding: 80px 0; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
 }
 
 @media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    h3 {
-        font-size: 1.4rem;
-    }
-    
-    .section {
-        padding: 70px 0;
-    }
-    
-    .parents {
-        font-size: 1.6rem;
-    }
-    
-    .date {
-        font-size: 1.1rem;
-    }
-    
-    .countdown div {
-        min-width: 60px;
-        padding: 10px 5px;
-    }
-    
-    .countdown span:first-child {
-        font-size: 1.6rem;
-    }
-    
-    nav ul {
-        flex-wrap: wrap;
-    }
-    
-    nav a {
-        padding: 15px 15px;
-        font-size: 0.95rem;
-    }
-    
-    nav a::after {
-        bottom: 10px;
-    }
-    
-    .detail-card, .special-card, #rsvp form, .registry-card {
-        padding: 30px 25px;
-    }
-    
-    .thanks-box {
-        padding: 40px 30px;
-    }
-    
-    .thanks-title {
-        font-size: 2.5rem;
-    }
-    
-    .special-card {
-        padding: 30px 25px;
-    }
+    body { font-size: 16px; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.4rem; }
+    .section { padding: 70px 0; }
+    .parents { font-size: 1.6rem; }
+    .date { font-size: 1.1rem; }
+    .countdown div { min-width: 60px; padding: 10px 5px; }
+    .countdown span:first-child { font-size: 1.6rem; }
+    nav ul { flex-wrap: wrap; }
+    nav a { padding: 15px 15px; font-size: 0.95rem; }
+    nav a::after { bottom: 10px; }
+    .detail-card, .special-card, .registry-card { padding: 30px 25px; }
+    .form-container { max-width: 100%; margin: 30px auto 0; }
+    .form-container iframe { height: 1200px; }
+    .thanks-box { padding: 40px 30px; }
+    .thanks-title { font-size: 2.5rem; }
+    .special-card { padding: 30px 25px; }
 }
 
 @media (max-width: 576px) {
-    .container {
-        width: 95%;
-        padding: 0 10px;
-    }
-    
-    h1 {
-        font-size: 2.2rem;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    h3 {
-        font-size: 1.3rem;
-    }
-    
-    .section {
-        padding: 60px 0;
-    }
-    
-    .header-content {
-        padding: 35px 25px;
-    }
-    
-    .parents {
-        font-size: 1.4rem;
-    }
-    
-    .countdown {
-        gap: 10px;
-    }
-    
-    .countdown div {
-        min-width: 50px;
-        padding: 8px 5px;
-    }
-    
-    .countdown span:first-child {
-        font-size: 1.4rem;
-    }
-    
-    nav a {
-        padding: 12px 10px;
-        font-size: 0.9rem;
-    }
-    
-    .detail-card, .special-card, #rsvp form, .registry-card {
-        padding: 25px 20px;
-    }
-    
-    .special-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-    
-    .note-bubble, .books-note, .diaper-note {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-        width: 100%;
-        border-radius: 30px;
-    }
-    
-    .registry-card span {
-        font-size: 1.1rem;
-    }
-    
-    .thanks-box {
-        padding: 35px 25px;
-    }
-    
-    .thanks-title {
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-    }
-    
-    .thanks-message {
-        font-size: 1.1rem;
-    }
-    
-    .action-btn {
-        font-size: 0.85rem;
-        padding: 10px 18px;
-    }
+    .container { width: 95%; padding: 0 10px; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    .section { padding: 60px 0; }
+    .header-content { padding: 35px 25px; }
+    .parents { font-size: 1.4rem; }
+    .countdown { gap: 10px; }
+    .countdown div { min-width: 50px; padding: 8px 5px; }
+    .countdown span:first-child { font-size: 1.4rem; }
+    nav a { padding: 12px 10px; font-size: 0.9rem; }
+    .detail-card, .special-card, .registry-card { padding: 25px 20px; }
+    .special-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
+    .note-bubble { padding: 10px 15px; font-size: 0.9rem; width: 100%; border-radius: 30px; }
+    .registry-card span { font-size: 1.1rem; }
+    .form-container { padding: 0 10px; }
+    .form-container iframe { height: 1250px; }
+    .thanks-box { padding: 35px 25px; }
+    .thanks-title { font-size: 2.2rem; margin-bottom: 20px; }
+    .thanks-message { font-size: 1.1rem; }
+    .action-btn { font-size: 0.85rem; padding: 10px 18px; }
 }
 
-/* Address action buttons */
 .address-actions {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 25px;
 }
-
 .action-btn {
     font-family: var(--font-heading);
     font-weight: 600;
@@ -994,14 +629,9 @@ footer a:hover {
     max-width: 220px;
     box-shadow: var(--shadow-sm);
 }
-
 .action-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     background-color: var(--accent-brown);
 }
-
-.action-btn i {
-    margin-right: 8px;
-    font-size: 1rem;
-} 
+.action-btn i { margin-right: 8px; font-size: 1rem; }
