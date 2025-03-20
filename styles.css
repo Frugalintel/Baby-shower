@@ -93,7 +93,7 @@ a:hover { color: var(--primary-yellow); }
     transition: var(--transition);
     display: inline-block;
     cursor: pointer;
-    text JO-decoration: none;
+    text-decoration: none;
     text-align: center;
 }
 .btn:hover, .home-link:hover {
@@ -149,7 +149,7 @@ header h2::after { display: none; }
     font-weight: 600;
 }
 .date {
-    font-size: 1.2rem;
+    font，让-size: 1.2rem;
     color: var(--soft-gray);
     margin-bottom: 2rem;
     letter-spacing: 0.03em;
@@ -403,15 +403,15 @@ nav a.active {
     overflow: hidden;
 }
 .iframe-wrapper {
-    height: 1200px; /* Set to full form height */
-    overflow: hidden; /* Prevent wrapper scrolling */
+    height: 1300px; /* Increased to fit full form on desktop */
+    overflow: hidden;
 }
 .rsvp-iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
-    overflow: hidden; /* Prevent iframe scrolling */
+    overflow: hidden;
     pointer-events: auto;
 }
 
@@ -544,7 +544,7 @@ footer a:hover { color: white; }
     }
     nav a::after { bottom: 14px; left: 15px; right: 15px; }
     .detail-card, .special-card, .registry-card { padding: 30px 25px; }
-    .iframe-wrapper { height: 1250px; } /* Adjusted for mobile */
+    .iframe-wrapper { height: 1250px; } /* Slightly reduced for mobile */
     .special-card { padding: 30px 25px; }
 }
 
@@ -568,6 +568,6 @@ footer a:hover { color: white; }
     .special-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
     .note-bubble { padding: 10px 15px; font-size: 0.9rem; width: 100%; border-radius: 30px; }
     .registry-card span { font-size: 1.1rem; }
-    .iframe-wrapper { height: 1300px; } /* Adjusted for smaller screens */
+    .iframe-wrapper { height: 1300px; } /* Matches desktop for consistency */
     .action-btn { font-size: 0.85rem; padding: 10px 18px; }
 }
