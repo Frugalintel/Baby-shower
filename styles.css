@@ -192,12 +192,12 @@ nav {
     top: 0;
     z-index: 1000;
 }
-.nav-list { /* Updated class name */
+nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
-    margin: 0; /* Ensure no extra margin */
+    margin: 0;
 }
 nav li { padding: 0; margin: 0 5px; }
 nav a {
@@ -223,24 +223,9 @@ nav a::after {
 }
 nav a:hover { color: var(--dark-brown); }
 nav a:hover::after { transform: scaleX(1); }
-nav a.active { /* Added for active state */
+nav a.active {
     color: var(--accent-brown);
     font-weight: 700;
-}
-
-/* Mobile nav toggle */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--dark-brown);
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .section { padding: 100px 0; position: relative; }
@@ -412,27 +397,19 @@ nav a.active { /* Added for active state */
 .form-container {
     max-width: 640px;
     margin: 40px auto 0;
-    position: relative; /* Updated */
-    width: 100%;
-}
-.iframe-wrapper { /* Added */
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 120%; /* Adjust this based on form height */
     background-color: var(--white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     overflow: hidden;
+    height: 1000px; /* Set to full form height */
 }
-.rsvp-iframe { /* Added */
-    position: absolute;
-    top: 0;
-    left: 0;
+.rsvp-iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
+    overflow: hidden; /* Prevent internal scrolling */
+    pointer-events: auto;
 }
 
 .registry-links {
@@ -554,29 +531,18 @@ footer a:hover { color: white; }
     .date { font-size: 1.1rem; }
     .countdown div { min-width: 60px; padding: 10px 5px; }
     .countdown span:first-child { font-size: 1.6rem; }
-    .nav-list { /* Updated */
-        flex-wrap: nowrap; /* Prevent premature wrapping */
-        justify-content: space-around; /* Better spacing */
+    nav ul {
+        flex-wrap: nowrap; /* Keep single line */
+        justify-content: space-around; /* Distribute space */
     }
-    nav a { padding: 18px 15px; font-size: 0.95rem; } /* Reduced padding */
+    nav a {
+        padding: 18px 15px; /* Reduced padding */
+        font-size: 0.95rem; /* Slightly smaller font */
+    }
     nav a::after { bottom: 14px; left: 15px; right: 15px; }
     .detail-card, .special-card, .registry-card { padding: 30px 25px; }
-    .iframe-wrapper { padding-bottom: 130%; } /* Adjusted for mobile */
+    .form-container { height: 1050px; } /* Slightly taller for mobile */
     .special-card { padding: 30px 25px; }
-    .nav-toggle { display: block; } /* Show toggle */
-    .nav-list:not(.nav-open) { display: none; } /* Hide by default on mobile */
-    .nav-open {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--primary-yellow);
-        box-shadow: var(--shadow-md);
-    }
-    .nav-open li { margin: 0; }
-    .nav-open a { padding: 15px 20px; }
 }
 
 @media (max-width: 576px) {
@@ -590,12 +556,15 @@ footer a:hover { color: white; }
     .countdown { gap: 10px; }
     .countdown div { min-width: 50px; padding: 8px 5px; }
     .countdown span:first-child { font-size: 1.4rem; }
-    nav a { padding: 18px 15px; font-size: 0.9rem; }
-    nav a::after { bottom: 14px; left: 15px; right: 15px; }
+    nav a {
+        padding: 18px 10px; /* Further reduced padding */
+        font-size: 0.9rem; /* Smaller font */
+    }
+    nav a::after { bottom: 14px; left: 10px; right: 10px; }
     .detail-card, .special-card, .registry-card { padding: 25px 20px; }
     .special-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
     .note-bubble { padding: 10px 15px; font-size: 0.9rem; width: 100%; border-radius: 30px; }
     .registry-card span { font-size: 1.1rem; }
-    .iframe-wrapper { padding-bottom: 140%; } /* Further adjustment */
+    .form-container { height: 1100px; } /* Adjusted for smaller screens */
     .action-btn { font-size: 0.85rem; padding: 10px 18px; }
 }
