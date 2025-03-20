@@ -1,180 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Baby Boy Shower</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <meta name="description" content="Join us for a sweet celebration for Cait & Jayden's little one!">
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>Baby Shower</h1>
-            <h2>Sweet Little Boy</h2>
-            <p class="parents">Cait & Jayden</p>
-            <p class="date">Saturday, May 17, 2025 • 11:30 AM - 2:00 PM</p>
-            <div class="countdown" id="countdown">
-                <div>
-                    <span id="days">00</span>
-                    <span class="label">Days</span>
-                </div>
-                <div>
-                    <span id="hours">00</span>
-                    <span class="label">Hours</span>
-                </div>
-                <div>
-                    <span id="minutes">00</span>
-                    <span class="label">Minutes</span>
-                </div>
-                <div>
-                    <span id="seconds">00</span>
-                    <span class="label">Seconds</span>
-                </div>
-            </div>
-        </div>
-    </header>
+// Set countdown date with timezone
+const countdownDate = new Date("2025-05-17T11:30:00-04:00").getTime();
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#event-details">Details</a></li>
-                <li><a href="#special-requests">Special Requests</a></li>
-                <li><a href="#rsvp">RSVP</a></li>
-                <li><a href="#registry">Registry</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-            </ul>
-        </div>
-    </nav>
+// Optimized Countdown Timer
+const countdown = setInterval(() => {
+    const now = Date.now();
+    const distance = countdownDate - now;
 
-    <section id="event-details" class="section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Event Details</h2>
-            </div>
-            <div class="details-grid">
-                <div class="detail-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>When</h3>
-                    <p>Saturday, May 17, 2025</p>
-                    <p>11:30 AM - 2:00 PM</p>
-                </div>
-                <div class="detail-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Where</h3>
-                    <p>Crispy's Springfield Gallery</p>
-                    <p>Upstairs Event Space</p>
-                    <p>1735 N Main St</p>
-                    <p>Jacksonville, FL 32206</p>
-                    <div class="address-actions">
-                        <a href="#" onclick="openMaps(event)" class="action-btn maps-btn">
-                            <i class="fas fa-map-marked-alt"></i> Open in Maps
-                        </a>
-                    </div>
-                </div>
-                <div class="detail-card">
-                    <i class="fas fa-info-circle"></i>
-                    <h3>Details</h3>
-                    <p>Join us for sweet treats, fun games, and celebrating our little boy's upcoming arrival!</p>
-                    <p>We can't wait to share this special day with you!</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "The baby shower has begun!";
+        return;
+    }
 
-    <section id="special-requests" class="section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Special Requests</h2>
-            </div>
-            <div class="special-requests">
-                <div class="special-card">
-                    <div class="card-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Diaper Raffle</h3>
-                    <p>Bring a pack of diapers in any size for your chance to win a special prize.</p>
-                    <p class="diaper-note">Don't forget to add your name for the raffle</p>
-                </div>
-                <div class="special-card">
-                    <div class="card-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Books for Baby</h3>
-                    <p>One little request, we hope it's not hard. Please bring a book instead of a card.</p>
-                    <p class="books-note">Please sign the book so we know who it's from</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    const timeUnits = {
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+    };
 
-    <section id="rsvp" class="section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>RSVP</h2>
-            </div>
-            <p>Please let us know if you can join our celebration by May 7th.</p>
-            <div class="form-container">
-                <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSe9G8zb7h7WHqVO4SR6QRH-2X_KUpnIuWjqHmJoW86GJDDZzw/viewform?embedded=true" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0"
-                    title="RSVP Form for Cait & Jayden's Baby Shower"
-                    scrolling="no"
-                >Loading…</iframe>
-            </div>
-        </div>
-    </section>
+    Object.entries(timeUnits).forEach(([unit, value]) => {
+        document.getElementById(unit).textContent = String(value).padStart(2, "0");
+    });
+}, 1000);
 
-    <section id="registry" class="section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Gift Registry</h2>
-            </div>
-            <p>Your presence is present enough, but if you'd like to help prepare our nursery, we've registered at:</p>
-            <div class="registry-links">
-                <a href="https://my.babylist.com/caitlin-saxton" target="_blank" class="registry-card">
-                    <span>View Our Babylist Registry</span>
-                </a>
-            </div>
-        </div>
-    </section>
+// Debounce function
+const debounce = (func, wait) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
 
-    <section id="gallery" class="section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Gallery</h2>
-            </div>
-            <p>Check back after the event to see photos of our special day!</p>
-            <div class="gallery-placeholder">
-                <p>Photos coming soon</p>
-            </div>
-        </div>
-    </section>
+// Smooth Scrolling with offset
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+        const navHeight = document.querySelector("nav").offsetHeight;
+        
+        window.scrollTo({
+            top: targetElement.offsetTop - navHeight,
+            behavior: "smooth"
+        });
+    });
+});
 
-    <footer>
-        <div class="container">
-            <p>With love, Cait & Jayden</p>
-            <p class="contact">Questions? Contact us at <a href="mailto:jaydensaxton.c@outlook.com">jaydensaxton.c@outlook.com</a></p>
-        </div>
-    </footer>
+// Active Navigation with debounced scroll
+window.addEventListener("scroll", debounce(() => {
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll("nav a");
+    const navHeight = document.querySelector("nav").offsetHeight;
+    let currentSection = "";
 
-    <script src="script.js"></script>
-    <script>
-        function openMaps(e) {
-            e.preventDefault();
-            const address = "Crispy's Springfield Gallery, 1735 N Main St, Jacksonville, FL 32206";
-            const encodedAddress = encodeURIComponent(address);
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            if (isIOS) {
-                window.open(`maps://maps.apple.com/?q=${encodedAddress}`, '_blank');
-            } else {
-                window.open(`https://maps.google.com/?q=${encodedAddress}`, '_blank');
-            }
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - navHeight - 100;
+        if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
         }
-    </script>
-</body>
-</html>
+    });
+
+    navLinks.forEach(link => {
+        link.classList.toggle("active", 
+            link.getAttribute("href") === `#${currentSection}`);
+    });
+}, 100));
+
+// Fade-in Animation
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { 
+            threshold: 0.1,
+            rootMargin: "0px 0px -10% 0px"
+        }
+    );
+
+    document.querySelectorAll(".section").forEach(section => {
+        Object.assign(section.style, {
+            opacity: "0",
+            transition: "opacity 1s ease-in-out",
+            willChange: "opacity"
+        });
+        observer.observe(section);
+    });
+
+    // RSVP iframe initial height
+    const iframe = document.querySelector(".rsvp-iframe");
+    if (iframe) {
+        iframe.addEventListener("load", () => {
+            iframe.style.height = "1000px"; // Set to full form height
+        });
+    }
+});
+
+// Maps Function
+function openMaps(e) {
+    e.preventDefault();
+    const address = "Crispy's Springfield Gallery, 1735 N Main St, Jacksonville, FL 32206";
+    const encodedAddress = encodeURIComponent(address);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const url = isIOS 
+        ? `maps://maps.apple.com/?q=${encodedAddress}`
+        : `https://maps.google.com/?q=${encodedAddress}`;
+
+    const newWindow = window.open(url, "_blank");
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+        alert("Unable to open maps. Search manually: " + address);
+    }
+}
+
+document.querySelector(".maps-btn")?.addEventListener("click", openMaps);
+
+// Error checking
+document.addEventListener("DOMContentLoaded", () => {
+    const requiredIds = ["days", "hours", "minutes", "seconds", "countdown"];
+    requiredIds.forEach(id => {
+        if (!document.getElementById(id)) {
+            console.error(`Required element #${id} not found in DOM`);
+        }
+    });
+});
