@@ -192,11 +192,12 @@ nav {
     top: 0;
     z-index: 1000;
 }
-nav ul {
+.nav-list { /* Updated class name */
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
+    margin: 0; /* Ensure no extra margin */
 }
 nav li { padding: 0; margin: 0 5px; }
 nav a {
@@ -222,6 +223,25 @@ nav a::after {
 }
 nav a:hover { color: var(--dark-brown); }
 nav a:hover::after { transform: scaleX(1); }
+nav a.active { /* Added for active state */
+    color: var(--accent-brown);
+    font-weight: 700;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--dark-brown);
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 .section { padding: 100px 0; position: relative; }
 #event-details { background-color: var(--cream); }
@@ -392,22 +412,27 @@ nav a:hover::after { transform: scaleX(1); }
 .form-container {
     max-width: 640px;
     margin: 40px auto 0;
+    position: relative; /* Updated */
+    width: 100%;
+}
+.iframe-wrapper { /* Added */
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 120%; /* Adjust this based on form height */
     background-color: var(--white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 850px;
 }
-.form-container iframe {
+.rsvp-iframe { /* Added */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
     display: block;
-    overflow: hidden;
-    -webkit-overflow-scrolling: auto;
-    pointer-events: auto;
 }
 
 .registry-links {
@@ -475,140 +500,6 @@ footer a { color: var(--primary-yellow); font-weight: 500; }
 footer a:hover { color: white; }
 .contact { margin-top: 25px; font-size: 0.9rem; opacity: 0.8; }
 
-.thanks-container {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--light-blue);
-    position: relative;
-    padding: 80px 20px 20px;
-}
-.thanks-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(var(--primary-blue) 5%, transparent 5%);
-    background-position: 0 0;
-    background-size: 30px 30px;
-    opacity: 0.15;
-    z-index: 1;
-}
-.thanks-box {
-    background-color: var(--white);
-    border-radius: var(--radius-md);
-    padding: 50px 40px;
-    max-width: 650px;
-    width: 90%;
-    position: relative;
-    z-index: 2;
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    border-top: 5px solid var(--primary-yellow);
-}
-.thanks-quote {
-    font-size: 1.2rem;
-    margin: 20px 0;
-    line-height: 1.6;
-    color: var(--accent-brown);
-    font-weight: 400;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-    position: relative;
-    font-style: italic;
-    opacity: 0.85;
-}
-.thanks-title {
-    font-size: 2.8rem;
-    color: var(--dark-brown);
-    margin-bottom: 30px;
-    position: relative;
-    text-decoration: none;
-}
-.thanks-content {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.thanks-message {
-    font-size: 1.3rem;
-    color: var(--dark-brown);
-    margin: 25px 0;
-    line-height: 1.6;
-    font-weight: 500;
-}
-.home-link-container {
-    margin-top: 40px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-}
-.home-link {
-    min-width: 250px;
-    width: 80%;
-    max-width: 350px;
-    padding: 14px 30px;
-    font-size: 1.05rem;
-}
-.home-link i { margin-right: 8px; }
-.thanks-container + footer { margin-top: 0; padding: 40px 0; }
-
-@media (max-width: 992px) {
-    .section { padding: 80px 0; }
-    h1 { font-size: 2.8rem; }
-    h2 { font-size: 2.2rem; }
-}
-
-@media (max-width: 768px) {
-    body { font-size: 16px; }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.4rem; }
-    .section { padding: 70px 0; }
-    .parents { font-size: 1.6rem; }
-    .date { font-size: 1.1rem; }
-    .countdown div { min-width: 60px; padding: 10px 5px; }
-    .countdown span:first-child { font-size: 1.6rem; }
-    nav ul { flex-wrap: wrap; }
-    nav a { padding: 18px 20px; font-size: 1rem; }
-    nav a::after { bottom: 14px; }
-    .detail-card, .special-card, .registry-card { padding: 30px 25px; }
-    .form-container { max-width: 100%; margin: 30px auto 0; height: 900px; }
-    .thanks-box { padding: 40px 30px; }
-    .thanks-title { font-size: 2.5rem; }
-    .special-card { padding: 30px 25px; }
-}
-
-@media (max-width: 576px) {
-    .container { width: 95%; padding: 0 10px; }
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.3rem; }
-    .section { padding: 60px 0; }
-    .header-content { padding: 35px 25px; }
-    .parents { font-size: 1.4rem; }
-    .countdown { gap: 10px; }
-    .countdown div { min-width: 50px; padding: 8px 5px; }
-    .countdown span:first-child { font-size: 1.4rem; }
-    nav a { padding: 18px 20px; font-size: 1rem; }
-    nav a::after { bottom: 14px; }
-    .detail-card, .special-card, .registry-card { padding: 25px 20px; }
-    .special-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
-    .note-bubble { padding: 10px 15px; font-size: 0.9rem; width: 100%; border-radius: 30px; }
-    .registry-card span { font-size: 1.1rem; }
-    .form-container { padding: 0 10px; height: 950px; }
-    .thanks-box { padding: 35px 25px; }
-    .thanks-title { font-size: 2.2rem; margin-bottom: 20px; }
-    .thanks-message { font-size: 1.1rem; }
-    .action-btn { font-size: 0.85rem; padding: 10px 18px; }
-}
-
 .address-actions {
     display: flex;
     flex-direction: column;
@@ -640,3 +531,71 @@ footer a:hover { color: white; }
     background-color: var(--accent-brown);
 }
 .action-btn i { margin-right: 8px; font-size: 1rem; }
+
+/* Animation */
+.fade-in {
+    opacity: 1 !important;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .section { padding: 80px 0; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 16px; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.4rem; }
+    .section { padding: 70px 0; }
+    .parents { font-size: 1.6rem; }
+    .date { font-size: 1.1rem; }
+    .countdown div { min-width: 60px; padding: 10px 5px; }
+    .countdown span:first-child { font-size: 1.6rem; }
+    .nav-list { /* Updated */
+        flex-wrap: nowrap; /* Prevent premature wrapping */
+        justify-content: space-around; /* Better spacing */
+    }
+    nav a { padding: 18px 15px; font-size: 0.95rem; } /* Reduced padding */
+    nav a::after { bottom: 14px; left: 15px; right: 15px; }
+    .detail-card, .special-card, .registry-card { padding: 30px 25px; }
+    .iframe-wrapper { padding-bottom: 130%; } /* Adjusted for mobile */
+    .special-card { padding: 30px 25px; }
+    .nav-toggle { display: block; } /* Show toggle */
+    .nav-list:not(.nav-open) { display: none; } /* Hide by default on mobile */
+    .nav-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-yellow);
+        box-shadow: var(--shadow-md);
+    }
+    .nav-open li { margin: 0; }
+    .nav-open a { padding: 15px 20px; }
+}
+
+@media (max-width: 576px) {
+    .container { width: 95%; padding: 0 10px; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    .section { padding: 60px 0; }
+    .header-content { padding: 35px 25px; }
+    .parents { font-size: 1.4rem; }
+    .countdown { gap: 10px; }
+    .countdown div { min-width: 50px; padding: 8px 5px; }
+    .countdown span:first-child { font-size: 1.4rem; }
+    nav a { padding: 18px 15px; font-size: 0.9rem; }
+    nav a::after { bottom: 14px; left: 15px; right: 15px; }
+    .detail-card, .special-card, .registry-card { padding: 25px 20px; }
+    .special-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
+    .note-bubble { padding: 10px 15px; font-size: 0.9rem; width: 100%; border-radius: 30px; }
+    .registry-card span { font-size: 1.1rem; }
+    .iframe-wrapper { padding-bottom: 140%; } /* Further adjustment */
+    .action-btn { font-size: 0.85rem; padding: 10px 18px; }
+}
